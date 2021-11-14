@@ -20,6 +20,17 @@ function App() {
             <Schedule />
           </div>
         </div>
+        <div classname= "Actions">
+          <button type= "Perform Action">
+            Perform Action
+            </button>
+          <button type= "Rest">
+            Rest
+          </button>
+          <button type= "Go Vote!">
+            Go Vote!
+          </button>
+          </div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.

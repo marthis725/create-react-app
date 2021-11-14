@@ -15,9 +15,17 @@
 
 .NavBar {
   background-color: #4373f7;
+  background-image: linear-gradient(#4373f7, white);
   overflow: hidden;
   list-style-type: none;
   min-height: 50 vh;
+}
+
+button {
+  padding: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 4px;
 }
 
 .GameScreen {
