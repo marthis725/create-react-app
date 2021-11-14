@@ -19,8 +19,8 @@ class App extends React.Component {
     this.schedule = {
       "Benny": ["15", "16"],
       "Jenny": ["10", "11", "12", "14", "15", "16", "17", "18"],
-      "Lenny": ["13"],
-      "Penny": ["7", "8", "9"],
+      "Lenny": ["9", "10", "13", "16"],
+      "Penny": ["7", "8", "18", "19", "20"],
     }
   }
 
@@ -44,6 +44,23 @@ class App extends React.Component {
       <button onClick={() => this.selectPlayer("Jenny")}>Jenny</button>
       <button onClick={() => this.selectPlayer("Lenny")}>Lenny</button>
       <button onClick={() => this.selectPlayer("Penny")}>Penny</button>
+      <ul>
+        <li>Benny takes a 15-unit courseload (considered average at this school), 
+          but also holds a part-time job where he works 8 hours a week.
+        </li>
+        <li>
+          Jenny takes a 20-unit courseload (considered heavy) and needs to spend
+          about 10 hours/day on schoolwork.
+        </li>
+        <li>
+          Lenny takes a 13-unit courseload and is involved in an extracurricular, 
+          so he spends time outside of class as well.
+        </li>
+        <li>
+          Penny takes a 7-unit courseload, but has a dependent (who needs to be 
+          attended to at certain hours), and holds a job at 15 hours a week. 
+        </li>
+      </ul>
     </div>;
     if (this.state.playerSelected) {
       content = <header className="GameScreen">
@@ -62,8 +79,8 @@ class App extends React.Component {
                   <button type= "Rest">
                     Rest
                   </button>
-                  <button type= "Go Vote!">
-                    Go Vote!
+                  <button type= "Go Vote!" onClick={this.addTime}>
+                    Go Vote! (Takes 2 hours)
                   </button>
                 </div>
                 <img src={logo} className="App-logo" alt="logo" />
