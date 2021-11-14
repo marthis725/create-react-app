@@ -5,4 +5,18 @@
 table, tr, th {
     border: 1px solid black;
     border-collapse: collapse;
+    width: 50%;
+    height: 100%;
+}
+
+th {
+    height: 50%;
+}
+
+.blocked {
+    background-color: grey;
+}
+
+.unblocked {
+
 }
