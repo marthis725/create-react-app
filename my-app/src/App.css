@@ -50,7 +50,12 @@ button {
 }
 
 .Map {
-  background-color: yellow;
+  background-color: grey;
+  background-image: url("Home\ Pic.png");
+  background-size: 80% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 5 px black;
   height: 100%;
   width: 60%;
   float: left;
