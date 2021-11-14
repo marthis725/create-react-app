@@ -161,7 +161,17 @@ class App extends React.Component {
         </li>
       </ul>
     </div>;
+
     if (this.state.playerSelected) {
+      let actions = [];
+      let i = 0;
+      for (let choice of this.choices[this.state.player][0].choices) {
+        actions.push(<button type={choice.text} onClick={() => 
+                  this.progress(choice.timeChange, choice.stressChange)}>
+          {choice.text}
+        </button>)
+        i++;
+      }
       content = <header className="GameScreen">
                 <div className="HUD">
                   <div className ="Map">
@@ -172,20 +182,9 @@ class App extends React.Component {
                   </div>
                 </div>
                 <div classname= "Actions">
-                  <button type= "Perform Action" onClick={() => this.progress(30, 0)}>
-                    Perform Action (adds 30 mins)
-                    </button>
-                  <button type= "Rest">
-                    Rest
-                  </button>
-                  <button type= "Go Vote!" onClick={() => this.progress(120, 0)}>
-                    Go Vote! (Takes 2 hours)
-                  </button>
+                  {actions}
                 </div>
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                  Edit <code>src/App.js</code> and save to reload.
-                </p>
+                <p>{this.choices[this.state.player][0].text}</p>
               </header>;
     }
     return (       
