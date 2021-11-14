@@ -13,10 +13,22 @@ th {
     height: 50%;
 }
 
-.blocked {
-    background-color: grey;
+.class {
+    background-color: #6666ff;
 }
 
-.unblocked {
+.study {
+    background-color: #bbbbff;
+}
 
+.work {
+    background-color: #66ff66;
+}
+
+.extra {
+    background-color: #ffff66;
+}
+
+.dep {
+    background-color: #ff6666;
 }
