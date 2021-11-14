@@ -8,12 +8,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: 9*60,
+      time: 8*60,
       playerSelected: false,
-      player: null
+      player: null,
+      stress: 10
     }
 
-    this.addTime = this.addTime.bind(this);
+    this.progress = this.progress.bind(this);
     this.selectPlayer = this.selectPlayer.bind(this);
 
     this.schedule = {
@@ -46,11 +47,85 @@ class App extends React.Component {
         "dep": ["7", "8", "15", "16", "17"],
       },
     }
+    this.choices = {
+      "Benny": [
+        {
+          "text": "Benny wakes up at 8 AM. It's Election Day and he's excited to participate! "
+                    + "However, he has class at 9AM and needs to make breakfast.",
+          "choices": [
+            {
+              "text": "Get breakfast (-5 stress) (+ 30 mins)",
+              "timeChange": 30,
+              "stressChange": -5,
+            },
+            {
+              "text": "Go vote! (+15 stress) (+1 hr)",
+              "timeChange": 60,
+              "stressChange": 15,
+            },
+          ]
+        }
+      ],
+      "Jenny": [
+        {
+          "text": "Jenny wakes up at 8 AM and eats a quick breakfast. She would love to go vote, "
+                    + "but she needs to finish an assignment for her class at 10.",
+          "choices": [
+            {
+              "text": "Go vote! (+1 hr) (+20 stress)",
+              "timeChange": 60,
+              "stressChange": 20,
+            },
+            {
+              "text": "Finish assignment (+1 hr) (+5 stress)",
+              "timeChange": 60,
+              "stressChange": 5,
+            },
+          ]
+        }
+      ],
+      "Lenny": [
+        {
+          "text": "Lenny has finished his morning routine and it's now 9 AM. ",
+          "choices": [
+            {
+              "text": "Catch up on assignments (+1 hr) (-10 stress)",
+              "timeChange": 60,
+              "stressChange": -10,
+            },
+            {
+              "text": "Go vote! (+10 stress) (+1 hr)",
+              "timeChange": 60,
+              "stressChange": 10,
+            },
+          ]
+        }
+      ],
+      "Penny": [
+        {
+          "text": "Penny has been taking care of a dependent since 7 AM, and is now finished. "
+                    + "It's time to get breakfast and go to her shift at work.",
+          "choices": [
+            {
+              "text": "Go to work (+3 hrs) (+5 stress)",
+              "timeChange": 90,
+              "stressChange": +5,
+            },
+            {
+              "text": "Skip part of shift and vote (+30 stress) (+1 hr)",
+              "timeChange": 60,
+              "stressChange": 30,
+            },
+          ]
+        }
+      ],
+    }
   }
 
-  addTime() {
+  progress(timeChange, stressChange) {
     this.setState({
-      time: this.state.time + 30
+      time: this.state.time + timeChange,
+      stress: this.state.stress + stressChange
     })
   }
 
@@ -97,13 +172,13 @@ class App extends React.Component {
                   </div>
                 </div>
                 <div classname= "Actions">
-                  <button type= "Perform Action" onClick={this.addTime}>
+                  <button type= "Perform Action" onClick={() => this.progress(30, 0)}>
                     Perform Action (adds 30 mins)
                     </button>
                   <button type= "Rest">
                     Rest
                   </button>
-                  <button type= "Go Vote!" onClick={this.addTime}>
+                  <button type= "Go Vote!" onClick={() => this.progress(120, 0)}>
                     Go Vote! (Takes 2 hours)
                   </button>
                 </div>
