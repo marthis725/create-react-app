@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import Schedule from './Schedule.js'
 import './App.css';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
 
           </div>
           <div className ="Schedule"> 
-
+            <Schedule />
           </div>
         </div>
         <img src={logo} className="App-logo" alt="logo" />

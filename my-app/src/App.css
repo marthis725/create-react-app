@@ -31,6 +31,27 @@
   color: black;
 }
 
+.HUD {
+  background-color: #bbbbbb;
+  width: 100%;
+  height: 400px;
+  display: inline;
+}
+
+.Map {
+  background-color: yellow;
+  height: 100%;
+  width: 60%;
+  float: left;
+}
+
+.Schedule {
+  background-color: green;
+  height: 100%;
+  width: 40%;
+  float: right;
+}
+
 .App-link {
   color: #61dafb;
 }
