@@ -16,7 +16,7 @@
 
 .NavBar {
   background-color: #4373f7;
-  background-image: linear-gradient(#4373f7, white);
+  background-image: linear-gradient(#4373f7, white, red);
   overflow: hidden;
   list-style-type: none;
   min-height: 50 vh;
@@ -57,7 +57,9 @@ button {
 }
 
 .Clock {
-  background-color: orange;
+  background-color: whitesmoke;
+  border: 4px black;
+  border-style: double;
   height: 9%;
   width: 20%;
   text-align: left;
