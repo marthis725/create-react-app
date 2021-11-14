@@ -1,7 +1,8 @@
 function intToTimeStr(timeInt) {
     // timeInt: num from [0, 1440) representing the minute of the day
     // there are 1440 mins in a day
-    let hour = timeInt / 60, minute = timeInt % 60;
+    console.log(timeInt);
+    let hour = Math.floor(timeInt / 60), minute = timeInt % 60;
     let AMPM = "AM";
     if (hour > 12) {
         hour -= 12;
@@ -14,12 +15,11 @@ function intToTimeStr(timeInt) {
     return hourStr + ":" + minuteStr + " " + AMPM;
 }
 
-function Map() {
-    let time = 9*60; // start at 9:00 AM
+function Map(props) {
     return (
-        <div className="mrap">
-        
-        </div>
+      <div className="Clock">
+        TIME: {intToTimeStr(props.time)}
+      </div>
     );
 }
   
