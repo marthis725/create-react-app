@@ -16,6 +16,9 @@ function App() {
           <div className ="Map">
 
           </div>
+          <div className="Clock">
+            
+          </div>
           <div className ="Schedule"> 
             <Schedule />
           </div>
